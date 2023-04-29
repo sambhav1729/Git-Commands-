@@ -1,0 +1,98 @@
+ Git - Three stage architecture :
+ ♾️Working area  | ♾️Staging area | ♾️Git repository                           ⚠️Folder = Repository
+ ➡️ stage files          ➡️ commit             ➡️ stored                                                                                                                       
+                  checkout the project             ⬅️  
+  
+  Git - File Status Life Cycle :
+                                                     (Staging Area)
+  ✴️ Untracked      ✴️Unmodified      ✴️Modified             ✴️Staged         ✴️Committed
+  ➡️ add the file     ➡️ edit the file      ➡️ stage the file     ➡️ commit       #️⃣️ commit stored in .git repository
+     (git add --)                           (git status)                               (git commit -m)            (git log)
+  
+💲️Git Commands:
+
+1: (git init) = "initialize the the current folder to git repository"
+
+2: (git status) = "show all the files in the git repository "
+
+3: (git add --a) = "brings all the files in the repository to the staging area for commitment "     ⚠️(git add <filename>) = for a particular file to be staged or tracked 
+
+4: (git commit -m "Message(Optional)") = "commits the files which are in the staging area" 
+
+5: (git log) = "displays all the commits that have made"
+
+6: (rm -rf  .git) = "delete the .git folder from the repository , so that the folder will not be a git repository anymore"
+
+7: (git clone <link URL> <folder name>) = "clone the folder from GitHub to local system (to the folder in which we are working) "
+
+8: Ignoring files in Git = " touch .gitignore"  makes a file and then all the files in the repository that we don't want to track can be listed here by their name    
+                                                          ⚠️ ( ignore those files that are not in staging area )
+
+9: (git diff) = " compares working directory and staging area"
+
+10: (git diff --staged) = " compares same named file present in staging area and last commit "
+
+11: (git commit -a -m "")  Skipping the staging area = "Used to skip the staging area for modified files that are being tracked "   ⚠️(you can't skip staging area for untracked files) 
+
+12: (git rm <file name>) = "Used to delete the file from the working directory"
+
+13:(git mv <file name> <new file name>) = "Used to rename the file in the staging area"     ⚠️(Untracked files cannot be renamed using this command) 
+
+14: (git rm --cached <file name>) = "Used to untrack file explicitly"  ⚠️(If your'e tracking a file and you move it to .gitignore then also it will be tracking via .gitignore folder so this 
+                                                                                                                                                        command is used to untrack that file explictly) 
+
+15: (git log -p) = "displays all the commits with their changes"
+
+16: (git log -n) = "displays n commits that have been made"  ⚠️(n= 1,2,3,...)
+
+17: (git log --stat) = "displays all the commits with their changes in lines and  respective folder"
+
+18: (git log --pretty=oneline) = "displays all the commits in one line"      ⚠️(Author = Creator of the file )   ⚠️(Committer = Who does some changes in files)
+
+19: (git log --pretty=short) = "displays all the commits including author name,message,committer"
+
+20: (git log --since=n.{days,week,months,year}) = "displays all the commits in the last n (days ,weeks,months,years)"
+
+21: (git commit --amend) = "Used to change the commit message or modify the commit done in the past without commiting a new commit"
+
+22: (git restore --staged <filename>) = "Used to make file unstaged from staged"
+
+23: (git restore <file.name>) ="Used to discard changes in working directory"
+
+24: (git checkout --<filename>) = "Used to restore/unmodify file to previous commit"
+
+25: (git checkout --f) = "Used to restore/unmodify all files to previous commit"
+
+26: (git config --global alias.<new.name> <old.name> = "Used to make alias of git commands"
+
+27: (git checkout -b <new branch.name>) = "Used to create new branch"
+
+28: (git checkout <branch.name>) = "Used to switch into different branch"
+
+29: (git branch) = "Used to check all branches in git"
+
+30: (git merge <branch name to be merge>) = "Used to merge branch to the parent branch"   ⚠️( To merge branch switch to parent branch first ) 
+
+31: (git branch -v) = "Used to see all the last commits of all branches"  
+
+32: (git branch --merged) = "Show all the merged branches"
+
+33: (git branch --no-merged) = "Show all the branches that are not merged"
+
+34: (git branch -d <branch name>) = "Used to delete those branches that are merged already"  ⚠️(Gives an error if the branch mentioned is not merged)
+
+35: (git branch -D <branch name>) = "Used to delete all types of branches whether merged or not"
+
+36: (git push origin <branch name>) = "Pushes a branch to github" 
+
+37: (git push -d origin <branch name>) = "Deletes the branch from github"
+
+38: (git remote add origin <REMOTE_URL>) = "Sets the new remote"
+
+39: (git remote -v) = "Verifies the new remote URL"
+
+40: (git push origin master) = "Pushes the changes in your local repository up to the remote repository you specified as the origin"
+
+41: (git pull origin master) = "Brings the copy of all the changes from a remote repository and merges them into the current branch"
+
+42: (git fetch origin) = "Gives the information of a new change from a remote repository without merging into the current branch"
